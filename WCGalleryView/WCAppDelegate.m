@@ -7,14 +7,62 @@
 //
 
 #import "WCAppDelegate.h"
+#import "WCGalleryView.h"
 
 @implementation WCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+
+    UIViewController *controller    = [[UIViewController alloc] initWithNibName:nil bundle:nil];
+    
+    NSArray *kittens = @[
+        [UIImage imageNamed:@"200.jpeg"],
+        [UIImage imageNamed:@"200.jpeg"],
+        [UIImage imageNamed:@"200.jpeg"],
+        [UIImage imageNamed:@"200.jpeg"],
+        [UIImage imageNamed:@"200.jpeg"]];
+    
+    WCGalleryView *galleryView      = [[WCGalleryView alloc] initWithImages:kittens frame:CGRectMake(0.0f, 0.0f, 200.0f, 200.0f)];
+    galleryView.backgroundColor     = [UIColor blueColor];
+    galleryView.center              = controller.view.center;
+    galleryView.borderColor         = [UIColor whiteColor];
+    galleryView.borderWidth         = 3.0f;
+    galleryView.shadowColor         = [UIColor blackColor];
+    galleryView.shadowOffset        = CGSizeMake(1.0f, 2.0f);
+    galleryView.shadowOpacity       = 0.5f;
+    galleryView.shadowRadius        = 2.0f;
+    galleryView.stackRadiusOffset   = 9.0f;
+    galleryView.animationDuration   = 0.3f;
+    galleryView.stackRadiusDirection = WCGalleryStackRadiusRandom;
+    galleryView.animationType        = WCGalleryAnimationCurl;
+    
+    [controller.view addSubview:galleryView];
+
+    galleryView.animationDuration = 0.5f;
+    
+//    [galleryView addImage:[UIImage imageNamed:@"200.jpeg"] animated:YES];
+//    [galleryView addImage:[UIImage imageNamed:@"200.jpeg"] animated:YES];
+//    [galleryView addImage:[UIImage imageNamed:@"200.jpeg"] animated:YES];
+//
+//    
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//        sleep(3);
+//        
+//        dispatch_sync(dispatch_get_main_queue(), ^{
+//            NSLog(@"Adding additional Image");
+//            galleryView.animationDuration = 0.5f;
+//            
+//            [galleryView addImage:[UIImage imageNamed:@"200.jpeg"] animated:YES];
+//            [galleryView addImage:[UIImage imageNamed:@"200.jpeg"] animated:YES];
+//            [galleryView addImage:[UIImage imageNamed:@"200.jpeg"] animated:YES];
+//        });
+//    });
+    
+    
+    self.window.rootViewController  = controller;
+    self.window.backgroundColor     = [UIColor darkGrayColor];
     [self.window makeKeyAndVisible];
     return YES;
 }

@@ -13,6 +13,11 @@
 		08DDF22E15C0CAE600D9D80E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 08DDF22C15C0CAE600D9D80E /* InfoPlist.strings */; };
 		08DDF23015C0CAE600D9D80E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 08DDF22F15C0CAE600D9D80E /* main.m */; };
 		08DDF23415C0CAE600D9D80E /* WCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 08DDF23315C0CAE600D9D80E /* WCAppDelegate.m */; };
+		08DDF23B15C0CAF400D9D80E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08DDF23A15C0CAF400D9D80E /* QuartzCore.framework */; };
+		08DDF24215C0CBD000D9D80E /* WCGalleryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08DDF24115C0CBD000D9D80E /* WCGalleryView.m */; };
+		08DDF24615C0D50C00D9D80E /* UIView+WCGalleryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08DDF24515C0D50C00D9D80E /* UIView+WCGalleryView.m */; };
+		08DDF24815C0DF8A00D9D80E /* 200.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 08DDF24715C0DF8A00D9D80E /* 200.jpeg */; };
+		08DDF24D15C0ECA800D9D80E /* UIImage+WCGalleryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08DDF24C15C0ECA800D9D80E /* UIImage+WCGalleryView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +29,16 @@
 		08DDF22D15C0CAE600D9D80E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		08DDF22F15C0CAE600D9D80E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		08DDF23115C0CAE600D9D80E /* WCGalleryView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WCGalleryView-Prefix.pch"; sourceTree = "<group>"; };
-		08DDF23215C0CAE600D9D80E /* WCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCAppDelegate.h; sourceTree = "<group>"; };
-		08DDF23315C0CAE600D9D80E /* WCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCAppDelegate.m; sourceTree = "<group>"; };
+		08DDF23215C0CAE600D9D80E /* WCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WCAppDelegate.h; path = WCGalleryView/WCAppDelegate.h; sourceTree = "<group>"; };
+		08DDF23315C0CAE600D9D80E /* WCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = WCAppDelegate.m; path = WCGalleryView/WCAppDelegate.m; sourceTree = "<group>"; };
+		08DDF23A15C0CAF400D9D80E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		08DDF24015C0CBD000D9D80E /* WCGalleryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCGalleryView.h; sourceTree = "<group>"; };
+		08DDF24115C0CBD000D9D80E /* WCGalleryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCGalleryView.m; sourceTree = "<group>"; };
+		08DDF24415C0D50C00D9D80E /* UIView+WCGalleryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WCGalleryView.h"; sourceTree = "<group>"; };
+		08DDF24515C0D50C00D9D80E /* UIView+WCGalleryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WCGalleryView.m"; sourceTree = "<group>"; };
+		08DDF24715C0DF8A00D9D80E /* 200.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 200.jpeg; sourceTree = "<group>"; };
+		08DDF24B15C0ECA800D9D80E /* UIImage+WCGalleryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WCGalleryView.h"; sourceTree = "<group>"; };
+		08DDF24C15C0ECA800D9D80E /* UIImage+WCGalleryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WCGalleryView.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08DDF23B15C0CAF400D9D80E /* QuartzCore.framework in Frameworks */,
 				08DDF22415C0CAE600D9D80E /* UIKit.framework in Frameworks */,
 				08DDF22615C0CAE600D9D80E /* Foundation.framework in Frameworks */,
 				08DDF22815C0CAE600D9D80E /* CoreGraphics.framework in Frameworks */,
@@ -45,6 +59,7 @@
 		08DDF21415C0CAE600D9D80E = {
 			isa = PBXGroup;
 			children = (
+				08DDF23C15C0CB4400D9D80E /* ExampleApp */,
 				08DDF22915C0CAE600D9D80E /* WCGalleryView */,
 				08DDF22215C0CAE600D9D80E /* Frameworks */,
 				08DDF22015C0CAE600D9D80E /* Products */,
@@ -62,6 +77,7 @@
 		08DDF22215C0CAE600D9D80E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				08DDF23A15C0CAF400D9D80E /* QuartzCore.framework */,
 				08DDF22315C0CAE600D9D80E /* UIKit.framework */,
 				08DDF22515C0CAE600D9D80E /* Foundation.framework */,
 				08DDF22715C0CAE600D9D80E /* CoreGraphics.framework */,
@@ -72,9 +88,9 @@
 		08DDF22915C0CAE600D9D80E /* WCGalleryView */ = {
 			isa = PBXGroup;
 			children = (
-				08DDF23215C0CAE600D9D80E /* WCAppDelegate.h */,
-				08DDF23315C0CAE600D9D80E /* WCAppDelegate.m */,
-				08DDF22A15C0CAE600D9D80E /* Supporting Files */,
+				08DDF24315C0D4FE00D9D80E /* Categories */,
+				08DDF23F15C0CB8E00D9D80E /* Controllers */,
+				08DDF23E15C0CB8A00D9D80E /* Views */,
 			);
 			path = WCGalleryView;
 			sourceTree = "<group>";
@@ -82,12 +98,75 @@
 		08DDF22A15C0CAE600D9D80E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				08DDF24715C0DF8A00D9D80E /* 200.jpeg */,
 				08DDF22B15C0CAE600D9D80E /* WCGalleryView-Info.plist */,
 				08DDF22C15C0CAE600D9D80E /* InfoPlist.strings */,
 				08DDF22F15C0CAE600D9D80E /* main.m */,
 				08DDF23115C0CAE600D9D80E /* WCGalleryView-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			path = WCGalleryView;
+			sourceTree = "<group>";
+		};
+		08DDF23C15C0CB4400D9D80E /* ExampleApp */ = {
+			isa = PBXGroup;
+			children = (
+				08DDF23D15C0CB5E00D9D80E /* Delegates */,
+				08DDF22A15C0CAE600D9D80E /* Supporting Files */,
+			);
+			name = ExampleApp;
+			sourceTree = "<group>";
+		};
+		08DDF23D15C0CB5E00D9D80E /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				08DDF23215C0CAE600D9D80E /* WCAppDelegate.h */,
+				08DDF23315C0CAE600D9D80E /* WCAppDelegate.m */,
+			);
+			name = Delegates;
+			sourceTree = "<group>";
+		};
+		08DDF23E15C0CB8A00D9D80E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				08DDF24015C0CBD000D9D80E /* WCGalleryView.h */,
+				08DDF24115C0CBD000D9D80E /* WCGalleryView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		08DDF23F15C0CB8E00D9D80E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		08DDF24315C0D4FE00D9D80E /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				08DDF24A15C0EC9400D9D80E /* UIImage */,
+				08DDF24915C0EC8E00D9D80E /* UIView */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		08DDF24915C0EC8E00D9D80E /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				08DDF24415C0D50C00D9D80E /* UIView+WCGalleryView.h */,
+				08DDF24515C0D50C00D9D80E /* UIView+WCGalleryView.m */,
+			);
+			name = UIView;
+			sourceTree = "<group>";
+		};
+		08DDF24A15C0EC9400D9D80E /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				08DDF24B15C0ECA800D9D80E /* UIImage+WCGalleryView.h */,
+				08DDF24C15C0ECA800D9D80E /* UIImage+WCGalleryView.m */,
+			);
+			name = UIImage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				08DDF22E15C0CAE600D9D80E /* InfoPlist.strings in Resources */,
+				08DDF24815C0DF8A00D9D80E /* 200.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +235,9 @@
 			files = (
 				08DDF23015C0CAE600D9D80E /* main.m in Sources */,
 				08DDF23415C0CAE600D9D80E /* WCAppDelegate.m in Sources */,
+				08DDF24215C0CBD000D9D80E /* WCGalleryView.m in Sources */,
+				08DDF24615C0D50C00D9D80E /* UIView+WCGalleryView.m in Sources */,
+				08DDF24D15C0ECA800D9D80E /* UIImage+WCGalleryView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
