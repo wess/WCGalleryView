@@ -36,17 +36,10 @@
     galleryView.stackRadiusOffset   = 9.0f;
     galleryView.animationDuration   = 0.3f;
     galleryView.stackRadiusDirection = WCGalleryStackRadiusRandom;
-    galleryView.animationType        = WCGalleryAnimationCurl;
+    galleryView.animationType        = WCGalleryAnimationFade;
     
     [controller.view addSubview:galleryView];
 
-    galleryView.animationDuration = 0.5f;
-    
-//    [galleryView addImage:[UIImage imageNamed:@"200.jpeg"] animated:YES];
-//    [galleryView addImage:[UIImage imageNamed:@"200.jpeg"] animated:YES];
-//    [galleryView addImage:[UIImage imageNamed:@"200.jpeg"] animated:YES];
-//
-//    
 //    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 //        sleep(3);
 //        

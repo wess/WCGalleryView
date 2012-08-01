@@ -9,17 +9,14 @@
 #import "WCGalleryView.h"
 #import "UIView+WCGalleryView.h"
 #import "UIImage+WCGalleryView.h"
-#import <objc/runtime.h>
-
-#define SCREEN_BOUNDS   [[UIScreen mainScreen] bounds]
 
 @interface WCGalleryView()
 {
-    NSOperationQueue    *_imageQueue;
-    NSMutableArray      *_images;
-    BOOL                _haveBuiltImageViews;
-    CGFloat             _previousScaling;
-    CGPoint             _center;
+    NSOperationQueue        *_imageQueue;
+    NSMutableArray          *_images;
+    BOOL                    _haveBuiltImageViews;
+    CGFloat                 _previousScaling;
+    CGPoint                 _center;
 }
 
 @property (strong) NSMutableArray *imageViews;
@@ -30,7 +27,8 @@
 - (UIImage *)generateImageForGalleryWithImage:(UIImage *)image;
 - (void)insertImageViewAtIndex:(NSInteger)index animated:(BOOL)animated;
 - (void)rotateImageView:(UIImageView *)imageView withControl:(NSInteger)control animated:(BOOL)animated callback:(void(^)())block;
-- (void)handlePinchGesture:(UIPinchGestureRecognizer *)gesture;
+//- (void)handlePinchGesture:(UIPinchGestureRecognizer *)gesture;
+- (void)touchAction:(UITapGestureRecognizer *)gesture;
 @end
 
 @implementation WCGalleryView
@@ -59,6 +57,9 @@
         
 //        UIPinchGestureRecognizer *pinchGesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinchGesture:)];
 //        self.gestureRecognizers = @[pinchGesture];
+        
+        UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(touchAction:)];
+        [self addGestureRecognizer:tapGestureRecognizer];
     }
     return self;
 }
@@ -104,16 +105,17 @@
     {
         case WCGalleryAnimationFall:
         {
-            [self addSubview:imageView];
-
+            fromFrame                 = imageView.frame;
             fromFrame.size.width     *= 2.0f;
             fromFrame.size.height    *= 2.0f;
-            fromFrame.origin.x        = (SCREEN_BOUNDS.size.width / 2)  - (toFrame.size.width / 2);
-            fromFrame.origin.y        = (SCREEN_BOUNDS.size.height / 2) - (toFrame.size.height / 2);
+            fromFrame.origin.x        = ([[UIScreen mainScreen] bounds].size.width / 2)  - (toFrame.size.width / 2);
+            fromFrame.origin.y        = ([[UIScreen mainScreen] bounds].size.height / 2) - (toFrame.size.height / 2);
             
             toFrame             = self.bounds;
             imageView.frame     = fromFrame;
             imageView.center    = self.center;
+
+            [self addSubview:imageView];
             
             [UIView animateWithDuration:_animationDuration animations:^{
                 if(topImageView != nil)
@@ -149,14 +151,13 @@
             
         default:
         {
-            toFrame = self.bounds;
+            [self addSubview:imageView];
             
             [UIView animateWithDuration:_animationDuration animations:^{
                 if(topImageView != nil)
                     [self rotateImageView:topImageView withControl:[self.subviews indexOfObject:topImageView] animated:NO callback:nil];
                 
                 imageView.alpha = 1.0f;
-                imageView.frame = toFrame;
             } completion:^(BOOL finished) {
                 [_imageQueue setSuspended:NO];
             }];    
@@ -264,6 +265,21 @@
 }
 
 #pragma mark - Gesture handlers -
+
+- (void)touchAction:(UITapGestureRecognizer *)gesture
+{
+    CGRect exploreFrame = [[UIApplication sharedApplication] keyWindow].frame;
+
+    WCGalleryExploreView *exploreView   = [[WCGalleryExploreView alloc] initWithImages:_images andFrame:exploreFrame];
+    exploreView.alpha                   = 0.0f;
+
+    [[[UIApplication sharedApplication] keyWindow] addSubview:exploreView];
+
+    [UIView animateWithDuration:0.2f animations:^{
+        exploreView.alpha  = 1.0f;
+    }];
+}
+
 // Coming soon....
 //- (void)handlePinchGesture:(UIPinchGestureRecognizer *)gesture
 //{

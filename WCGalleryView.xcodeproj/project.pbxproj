@@ -18,6 +18,7 @@
 		08DDF24615C0D50C00D9D80E /* UIView+WCGalleryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08DDF24515C0D50C00D9D80E /* UIView+WCGalleryView.m */; };
 		08DDF24815C0DF8A00D9D80E /* 200.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 08DDF24715C0DF8A00D9D80E /* 200.jpeg */; };
 		08DDF24D15C0ECA800D9D80E /* UIImage+WCGalleryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08DDF24C15C0ECA800D9D80E /* UIImage+WCGalleryView.m */; };
+		08E571BA15C81B9100E1B094 /* WCGalleryExploreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08E571B915C81B9100E1B094 /* WCGalleryExploreView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,8 @@
 		08DDF24715C0DF8A00D9D80E /* 200.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 200.jpeg; sourceTree = "<group>"; };
 		08DDF24B15C0ECA800D9D80E /* UIImage+WCGalleryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WCGalleryView.h"; sourceTree = "<group>"; };
 		08DDF24C15C0ECA800D9D80E /* UIImage+WCGalleryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WCGalleryView.m"; sourceTree = "<group>"; };
+		08E571B815C81B9100E1B094 /* WCGalleryExploreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCGalleryExploreView.h; sourceTree = "<group>"; };
+		08E571B915C81B9100E1B094 /* WCGalleryExploreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCGalleryExploreView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,8 +132,8 @@
 		08DDF23E15C0CB8A00D9D80E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				08DDF24015C0CBD000D9D80E /* WCGalleryView.h */,
-				08DDF24115C0CBD000D9D80E /* WCGalleryView.m */,
+				08E571B715C81B7D00E1B094 /* GalleryExploreView */,
+				08E571B515C81B7200E1B094 /* GalleryView */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -167,6 +170,24 @@
 				08DDF24C15C0ECA800D9D80E /* UIImage+WCGalleryView.m */,
 			);
 			name = UIImage;
+			sourceTree = "<group>";
+		};
+		08E571B515C81B7200E1B094 /* GalleryView */ = {
+			isa = PBXGroup;
+			children = (
+				08DDF24015C0CBD000D9D80E /* WCGalleryView.h */,
+				08DDF24115C0CBD000D9D80E /* WCGalleryView.m */,
+			);
+			name = GalleryView;
+			sourceTree = "<group>";
+		};
+		08E571B715C81B7D00E1B094 /* GalleryExploreView */ = {
+			isa = PBXGroup;
+			children = (
+				08E571B815C81B9100E1B094 /* WCGalleryExploreView.h */,
+				08E571B915C81B9100E1B094 /* WCGalleryExploreView.m */,
+			);
+			name = GalleryExploreView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +259,7 @@
 				08DDF24215C0CBD000D9D80E /* WCGalleryView.m in Sources */,
 				08DDF24615C0D50C00D9D80E /* UIView+WCGalleryView.m in Sources */,
 				08DDF24D15C0ECA800D9D80E /* UIImage+WCGalleryView.m in Sources */,
+				08E571BA15C81B9100E1B094 /* WCGalleryExploreView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +367,7 @@
 				08DDF23915C0CAE600D9D80E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
+#import "WCGalleryExploreView.h"
 
 typedef enum {
     WCGalleryAnimationFade  = 1,
@@ -22,18 +23,20 @@ typedef enum
     WCGalleryStackRadiusRandom              = 3
 } WCGalleryStackRadiusDirection;
 
+@protocol WCGalleryDelegate;
 @interface WCGalleryView : UIView
-@property (assign, nonatomic) WCGalleryAnimationType animationType;
+@property (strong, nonatomic) id<WCGalleryDelegate>         delegate;
+@property (assign, nonatomic) WCGalleryAnimationType        animationType;
 @property (assign, nonatomic) WCGalleryStackRadiusDirection stackRadiusDirection;
-@property (assign, nonatomic) CGFloat stackRadiusOffset;
-@property (assign, nonatomic) CGFloat animationDuration;
-@property (assign, nonatomic) BOOL    animate;
-@property (assign, nonatomic) UIColor *borderColor;
-@property (assign, nonatomic) CGFloat borderWidth;
-@property (assign, nonatomic) UIColor *shadowColor;
-@property (assign, nonatomic) CGSize  shadowOffset;
-@property (assign, nonatomic) CGFloat shadowRadius;
-@property (assign, nonatomic) CGFloat shadowOpacity;
+@property (assign, nonatomic) CGFloat                       stackRadiusOffset;
+@property (assign, nonatomic) CGFloat                       animationDuration;
+@property (assign, nonatomic) BOOL                          animate;
+@property (assign, nonatomic) UIColor                       *borderColor;
+@property (assign, nonatomic) CGFloat                       borderWidth;
+@property (assign, nonatomic) UIColor                       *shadowColor;
+@property (assign, nonatomic) CGSize                        shadowOffset;
+@property (assign, nonatomic) CGFloat                       shadowRadius;
+@property (assign, nonatomic) CGFloat                       shadowOpacity;
 
 
 - (id)initWithImages:(NSArray *)images frame:(CGRect)frame;
